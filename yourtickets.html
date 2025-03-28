@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="TIXORA is a platform to discover shows, events, and activities around you." />
+  <link rel="icon" href="images/Mainlogo.png" type="image/png" />        <!-- Favicon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TIXORA YourTicketspage</title>
+  <link rel="stylesheet" href="css/style.css" />                        <!-- Link to external CSS -->
+
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">                                               <!-- HEADER SECTION -->
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="images/TicketLogo.png" alt="TIXORA Logo" />           <!-- Logo -->
+      </a>
+    </div>
+
+    <div class="header-search">                                         <!-- Interactive Search Component -->
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search anything..." id="searchInput">
+        <button class="search-button" id="searchButton" aria-label="Search">
+          <svg class="search-icon" viewBox="0 0 512 512">
+            <path d="M505 442.7l-99.7-99.7c28.4-34.9 45.7-79 45.7-127.4C451 96.5 354.5 0 231 0S11 96.5 11 216.6 107.5 433 231 433c48.4 0 92.5-17.3 127.4-45.7l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l22.3-22.3c9.3-9.4 9.3-24.6-.1-34zM231 384c-92.6 0-168-75.4-168-168S138.4 48 231 48s168 75.4 168 168-75.4 168-168 168z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div class="header-nav">
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link" >Home</a>                    <!-- Navigation Links -->
+        <a href="about.html" class="nav-link" target="_blank" >About</a>                   <!-- Navigation Links -->
+        <a href="contact.html" class="nav-link" target="_blank">Contact</a>               <!-- Navigation Links -->
+      </nav>  
+    </div>
+
+    <div class="login-signup-toggle" id="loginToggle">
+      <a href="login.html" class="toggle-segment login-segment">Sign In</a>
+    </div>
+
+    
+    
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+<!-- The Overlay (optional, if you want to dim the background) -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- The Off‐Canvas Side Menu -->
+<div class="side-menu" id="sideMenu">
+  <!-- Header portion (profile, login/register button, etc.) -->
+  <div class="side-menu-header">
+    <div class="profile-section">
+      <h2 id="hey">Hey!</h2>
+      <a href="login.html" class="login-register-btn" id="login_btn1">Login / Register</a>
+    </div>
+  </div>
+
+  <!-- Navigation / links portion -->
+  <nav class="side-menu-links">
+    <button id="Home">Home</button>
+    <button id="Profile">Profile</button>
+    <button id="YourTickets" onclick="window.location.href='yourtickets.html'">Your Tickets</button>
+    <button id="Sign-out">Sign-out</button>
+  </nav>
+</div>    
+  </header>
+
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Your Tickets</h1>
+      <p class="hero-text">Review and manage your purchased tickets on TIXORA.</p>
+    </div>
+  </section>
+
+
+  <main class="main">
+    <!-- TICKETS LIST -->
+    <section class="tickets-list" id="ticketsList">
+        <!-- Sample Ticket Cards - These would be dynamically generated from your database -->
+       
+
+
+    </section>
+</main>
+
+
+  
+
+
+   
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+  
+      <!-- BOTTOM CALL-TO-ACTION now inside footer -->
+      <section class="cta-section">
+        <!-- Left side: icon + short text -->
+        <div class="cta-left">
+          <img src="images/calendar_check.png" alt="Calendar icon" class="cta-icon" />
+          <span class="cta-title" style="color: #989797; font-size: 17px; font-family: Suez One; font-weight: 400; letter-spacing: 0.99px; word-wrap: break-word" >List your show</span>
+        </div>
+    
+        <!-- Middle: descriptive text -->
+        <div class="cta-middle" style="color: #989797; font-size: 16px; font-family: Suez One; font-weight: 400; letter-spacing: 0.99px; word-wrap: break-word" >
+          Got a show, event, activity or a great experience? Partner with us & get listed on Tixora
+        </div>
+    
+        <!-- Right side: pink button -->
+        <button class="cta-button" onclick="window.open('contact.html', '_blank')">
+          Contact today!
+        </button>
+      </section>
+    
+      <div class="footer-line">
+        <!-- Centered image over the line with a link -->
+        <a href="index.html">
+          <img class="footer-logo" src="images/footerlogo.png" alt="Footer Logo" />
+        </a>
+      </div>
+      
+      <div class="facebook">
+        <a href="https://www.facebook.com/" target="_blank">
+          <img src="images/facebook.png" alt="Facebook" />
+        </a>
+    
+        <a href="https://www.twitter.com/" target="_blank">
+          <img src="images/twitter.png" alt="Twitter" />
+        </a>
+        <a
+          href="https://www.linkedin.com/"
+          target="_blank"
+        > <img src="images/linkedin.png" alt="Linkedin" />
+        </a>
+    
+      <div style="color: #989797; font-size: 11px; font-family: Suez One; font-weight: 400; letter-spacing: 0.99px; word-wrap: break-word">
+        Copyright 2025 TIXORA. All rights reserved.
+      </div>
+    </footer>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const urlParams = new URLSearchParams(window.location.search);
+          const username= urlParams.get('id');
+          console.log(username);
+          document.getElementById('hamburger').addEventListener('click', function () {
+              document.getElementById('sideMenu').classList.add('show');
+              document.getElementById('menuOverlay').classList.add('show');
+          });
+
+          document.getElementById('menuOverlay').addEventListener('click', function () {
+              document.getElementById('sideMenu').classList.remove('show');
+              document.getElementById('menuOverlay').classList.remove('show');
+          });
+          const section=document.querySelector('.tickets-list');
+          fetch(`/Mytickets/${username}`)
+              .then(res => res.json())
+              .then(data => {
+                  
+                  for (let i = 0; i < data.length; i++) {
+                      const ticket_container = document.createElement('div');
+                      ticket_container.className = 'ticket-card';
+                      const ticket_header = document.createElement('div');
+                      ticket_header.className = 'ticket-header';
+                      ticket_header.textContent = 'Booking #' + data[i].BOOKING_ID;
+
+                      const ticket_content = document.createElement('div');
+                      ticket_content.className = 'ticket-content';
+
+                      const ticket_name = document.createElement('div');
+                      ticket_name.className = 'ticket-event';
+                      ticket_name.textContent = data[i].EVENT_NAME;
+
+                      const booking_id_detail = document.createElement('div');
+                      booking_id_detail.className = 'ticket-detail';
+
+                      booking_id_detail.textContent = 'BOOKING ID:               ' + data[i].BOOKING_ID;
+
+                      const ticket_details = document.createElement('div');
+                      ticket_details.className = 'ticket_detail';
+                      ticket_details.textContent = 'TICKETS:    ' + data[i].TICKET_COUNT + '×' + data[i].CLASS_NAME;
+
+
+                      const Amount = document.createElement('div');
+                      Amount.className = 'ticket_detail';
+                      Amount.textContent = 'TOTAL VALUE:   ' + data[i].TOTAL_VALUE;
+
+
+                      const date_and_time = document.createElement('div');
+                      date_and_time.className = 'ticket-detail';
+                      date_and_time.textContent = new Date(data[i].DATE_AND_TIME).toLocaleString('en-IN', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric',
+                          hour: '2-digit',
+                          minute: '2-digit'
+                      });
+                      const cancel_btn = document.createElement('button');
+                      cancel_btn.className = 'ticket-actions';
+                      cancel_btn.textContent = 'Cancel Booking';
+                      cancel_btn.dataset.bookingId = data[i].BOOKING_ID;
+
+                  
+                      ticket_content.appendChild(booking_id_detail);
+                      ticket_content.appendChild(ticket_name);
+                      ticket_content.appendChild(ticket_details);
+                      ticket_content.appendChild(Amount);
+                      ticket_content.appendChild(date_and_time);
+                      ticket_container.appendChild(ticket_header);
+                      ticket_container.appendChild(ticket_content);
+                      ticket_container.appendChild(cancel_btn);
+                      cancel_btn.addEventListener('click', function (event) {
+                          event.preventDefault();
+                          const bookingId = this.dataset.bookingId;
+                          if (confirm(`Are you sure you want to cancel booking ${bookingId}?`)) {
+                              fetch('/cancel', {
+                                  method: 'POST',
+                                  headers: {
+                                      'Content-Type': 'application/json'
+                                  },
+                                  body: JSON.stringify({bookingId})
+                              })
+                              ticket_container.remove();
+                          }
+                      })
+                      section.appendChild(ticket_container);
+                  }
+              });
+      });
+  </script>
+
+<script src="index.js"></script>
+
+</body>
+</html>

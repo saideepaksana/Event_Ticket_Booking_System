@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="TIXORA is a platform to discover shows, events, and activities around you." />
+  <link rel="icon" href="images/Mainlogo.png" type="image/png" />        <!-- Favicon -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TIXORA Eventspage</title>
+  <link rel="stylesheet" href="css/style.css" />                        <!-- Link to external CSS -->
+
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">                                               <!-- HEADER SECTION -->
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="images/TicketLogo.png" alt="TIXORA Logo" />           <!-- Logo -->
+      </a>
+    </div>
+
+    <div class="header-search">                                         <!-- Interactive Search Component -->
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search anything..." id="searchInput">
+        <button class="search-button" id="searchButton" aria-label="Search">
+          <svg class="search-icon" viewBox="0 0 512 512">
+            <path d="M505 442.7l-99.7-99.7c28.4-34.9 45.7-79 45.7-127.4C451 96.5 354.5 0 231 0S11 96.5 11 216.6 107.5 433 231 433c48.4 0 92.5-17.3 127.4-45.7l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l22.3-22.3c9.3-9.4 9.3-24.6-.1-34zM231 384c-92.6 0-168-75.4-168-168S138.4 48 231 48s168 75.4 168 168-75.4 168-168 168z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div class="header-nav">
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link" >Home</a>                    <!-- Navigation Links -->
+        <a href="about.html" class="nav-link" target="_blank" >About</a>                   <!-- Navigation Links -->
+        <a href="contact.html" class="nav-link" target="_blank">Contact</a>               <!-- Navigation Links -->
+      </nav>  
+    </div>
+
+    <div class="login-signup-toggle" id="loginToggle">
+      <a href="login.html" class="toggle-segment login-segment">Sign In</a>
+    </div>
+
+    
+    
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+<!-- The Overlay (optional, if you want to dim the background) -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- The Off‐Canvas Side Menu -->
+<div class="side-menu" id="sideMenu">
+  <!-- Header portion (profile, login/register button, etc.) -->
+  <div class="side-menu-header">
+    <div class="profile-section">
+      <h2 id="hey">Hey!</h2>
+      <a href="login.html" class="login-register-btn" id="login_btn1">Login / Register</a>
+    </div>
+  </div>
+
+  <!-- Navigation / links portion -->
+  <nav class="side-menu-links">
+    <button id="Home">Home</button>
+    <button id="Profile">Profile</button>
+    <button id="YourTickets" onclick="window.location.href='yourtickets.html'">Your Tickets</button>
+    <button id="Sign-out">Sign-out</button>
+  </nav>
+</div>    
+  </header>
+
+
+    <!-- PAGE HEADING -->
+    <h1 class="page-heading" id="EVENT_TYPE"></h1>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+      <!-- FILTER PANEL -->
+      <aside class="filter-panel">
+        <div class="filter-group">
+          <h3>Location</h3>
+          <select class="location-select" id="locationSelect">
+            <option value="">All Locations</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Pune">Pune</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <h3>Date</h3>
+          <input type="date" class="date-picker" id="eventDate">
+        </div>
+        <button class="apply-filters-btn" id="applyFilters">Apply Filters</button>
+      </aside>
+      
+      <!-- EVENTS LIST -->
+      <section class="events-list">
+        
+      </section>
+    </main>
+  
+    <script src="catev.js">
+    </script>
+
+
+
+  <body>
+    <div class="eventspart">
+      
+      <!-- HERO -->
+  <!-- <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Events</h1>
+      <p class="hero-text">Discover shows, events, and activities around you with TIXORA.</p>
+    </div>
+  </section> -->
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <!-- FILTER PANEL -->
+    <!-- <aside class="filter-panel"> -->
+      
+
+      <!-- <div class="filter-group">
+        <h3>Categories</h3>
+        <button>Arts & Crafts</button>
+        <button>Education</button>
+        <button>Painting</button>
+        <button>Food & Drinks</button>
+        <button>Wellness</button>
+        <button>Photography</button>
+        <button>Music</button>
+        <button>Fashion & Beauty</button>
+        <button>Gardening</button>
+      </div> -->
+
+      <!-- <div class="filter-group">
+        <h3>Price</h3>
+        <button>Free</button>
+        <button>Paid</button>
+      </div> -->
+    <!-- </aside> -->
+
+    <!-- EVENTS LIST -->
+    <!-- <section class="events-list"> -->
+      <!-- Example Event Card 1 -->
+      <!-- <div class="event-card">
+        <img src="images/event-pottery.jpg" alt="Pottery Workshop" />
+        <div class="event-content">
+          <div class="event-title">Pottery Workshop</div>
+          <div class="event-date">Sat, 22 Mar onwards</div>
+          <div class="event-description">
+            Hand building & pottery wheel sessions. Includes complimentary drink!
+          </div>
+          <div class="event-cta">
+            <button>Book Now</button>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Example Event Card 2 -->
+      <!-- <div class="event-card">
+        <img src="images/event-resin.jpg" alt="Resin Workshop" />
+        <div class="event-content">
+          <div class="event-title">Resin Art Workshop</div>
+          <div class="event-date">Fri, 21 Mar onwards</div>
+          <div class="event-description">
+            Learn to create stunning resin lockets and coasters in this creative session.
+          </div>
+          <div class="event-cta">
+            <button>Book Now</button>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Example Event Card 3 -->
+      <!-- <div class="event-card">
+        <img src="images/event-escape.jpg" alt="Escape the Ordinary" />
+        <div class="event-content">
+          <div class="event-title">Escape the Ordinary</div>
+          <div class="event-date">Sat, 22 Mar onwards</div>
+          <div class="event-description">
+            Sail into experiences: Pride Circle, Salsa Mixer, Trivia Night, and more!
+          </div>
+          <div class="event-cta">
+            <button>Book Now</button>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- Add more event cards as needed -->
+    </section>
+  </main>
+
+    </div>
+  </body>
+  
+
+  <!-- FOOTER SECTION -->
+<footer class="footer">
+
+  <!-- BOTTOM CALL-TO-ACTION now inside footer -->
+  <section class="cta-section">
+    <!-- Left side: icon + short text -->
+    <div class="cta-left">
+      <img src="images/calendar_check.png" alt="Calendar icon" class="cta-icon" />
+      <span class="cta-title" style="color: #989797; font-size: 17px; font-family: Suez One; font-weight: 400; letter-spacing: 0.99px; word-wrap: break-word" >List your show</span>
+    </div>
+
+    <!-- Middle: descriptive text -->
+    <div class="cta-middle" style="color: #989797; font-size: 16px; font-family: Suez One; font-weight: 400; letter-spacing: 0.99px; word-wrap: break-word" >
+      Got a show, event, activity or a great experience? Partner with us & get listed on Tixora
+    </div>
+
+    <!-- Right side: pink button -->
+    <button class="cta-button" onclick="window.open('contact.html', '_blank')">
+      Contact today!
+    </button>
+  </section>
+
+  <div class="footer-line">
+    <!-- Centered image over the line with a link -->
+    <a href="index.html">
+      <img class="footer-logo" src="images/footerlogo.png" alt="Footer Logo" />
+    </a>
+  </div>
+  
+  <div class="facebook">
+    <a href="https://www.facebook.com/" target="_blank">
+      <img src="images/facebook.png" alt="Facebook" />
+    </a>
+
+    <a href="https://www.twitter.com/" target="_blank">
+      <img src="images/twitter.png" alt="Twitter" />
+    </a>
+    <a
+      href="https://www.linkedin.com/"
+      target="_blank"
+    > <img src="images/linkedin.png" alt="Linkedin" />
+    </a>
+
+  <div style="color: #989797; font-size: 11px; font-family: Suez One; font-weight: 400; letter-spacing: 0.99px; word-wrap: break-word">
+    Copyright 2025 TIXORA. All rights reserved.
+  </div>
+</footer>
+
+ 
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TIXORA UserDetails Page</title>
+  <link rel="icon" href="images/Mainlogo.png" type="image/png" />
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+
+
+<body>
+
+
+  <header class="header">                                               <!-- HEADER SECTION -->
+    <div class="header-logo">
+      <a href="index.html">
+        <img src="images/TicketLogo.png" alt="TIXORA Logo" />           <!-- Logo -->
+      </a>
+    </div>
+
+    <div class="header-search">                                         <!-- Interactive Search Component -->
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search anything..." id="searchInput">
+        <button class="search-button" id="searchButton" aria-label="Search">
+          <svg class="search-icon" viewBox="0 0 512 512">
+            <path d="M505 442.7l-99.7-99.7c28.4-34.9 45.7-79 45.7-127.4C451 96.5 354.5 0 231 0S11 96.5 11 216.6 107.5 433 231 433c48.4 0 92.5-17.3 127.4-45.7l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l22.3-22.3c9.3-9.4 9.3-24.6-.1-34zM231 384c-92.6 0-168-75.4-168-168S138.4 48 231 48s168 75.4 168 168-75.4 168-168 168z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <div class="header-nav">
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link" >Home</a>                    <!-- Navigation Links -->
+        <a href="about.html" class="nav-link" target="_blank" >About</a>                   <!-- Navigation Links -->
+        <a href="contact.html" class="nav-link" target="_blank">Contact</a>               <!-- Navigation Links -->
+      </nav>  
+    </div>
+
+    <div class="login-signup-toggle" id="loginToggle">
+      <a href="login.html" class="toggle-segment login-segment">Sign In</a>
+    </div>
+
+    
+    
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+<!-- The Overlay (optional, if you want to dim the background) -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- The Off‐Canvas Side Menu -->
+<div class="side-menu" id="sideMenu">
+  <!-- Header portion (profile, login/register button, etc.) -->
+  <div class="side-menu-header">
+    <div class="profile-section">
+      <h2 id="hey">Hey!</h2>
+      <a href="login.html" class="login-register-btn" id="login_btn1">Login / Register</a>
+    </div>
+  </div>
+
+  <!-- Navigation / links portion -->
+  <nav class="side-menu-links">
+    <button id="Home">Home</button>
+    <button id="Profile">Profile</button>
+    <button id="Sign-out">Sign-out</button>
+    <button id="YourTickets" onclick="window.location.href='yourtickets.html'">Your Tickets</button>
+  </nav>
+</div>
+
+
+
+    
+  </header>
+
+  <div class="userpart">
+    <!-- Header -->
+    <div class="header">
+      <img src="user1.png" alt="Profile">
+      <h1 id="user"> Hi ------------ </h1>
+    </div>
+
+    <!-- Main container -->
+    <div class="container">
+      <!-- Account Details -->
+      <h2 class="section-title">Account Details</h2>
+      <div class="profile-data">
+        <div class="data-item">
+          <div class="data-label">Email Address:</div>
+          <div class="data-value" id="email"></div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Mobile Number:</div>
+          <div class="data-value" id="mobile"></div>
+        </div>
+      </div>
+
+      <!-- Personal Details -->
+      <h2 class="section-title">Personal Details</h2>
+      <div class="profile-data">
+        <div class="data-item">
+          <div class="data-label">First Name:</div>
+          <div class="data-value" id="name"></div>
+        </div>
+        <div class="data-item">
+          <div class="data-label">Age:</div>
+          <div class="data-value" id="age"></div>
+        </div>
+      </div>
+
+      <!-- Edit button -->
+      <button class="edit-button" onclick="editProfile()">Edit Profile</button>
+    </div>
+  </div>
+
+  <!-- JavaScript remains the same -->
+  <script>
+    document.addEventListener("DOMContentLoaded",  async function () {
+        const token = await localStorage.getItem("token");
+        const payload = JSON.parse(atob(token.split(".")[1]));
+        fetch('/user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username: payload.name })
+        })
+            .then(r => r.json())
+            .then(data => {
+                console.log(data);
+                document.getElementById("email").textContent = data.EMAIL_ID;
+                document.getElementById("mobile").textContent = data.PHONE_NUMBER;
+                document.getElementById("age").textContent = data.AGE;
+                document.getElementById("name").textContent = data.NAME;
+                document.getElementById("user").textContent = "Hi, " + data.USERNAME;
+            })
+    })
+</script>
+</body>
+
+<!-- FOOTER SECTION -->
+<footer class="footer">
+
+  <!-- BOTTOM CALL-TO-ACTION now inside footer -->
+  <section class="cta-section">
+    <!-- Left side: icon + short text -->
+    <div class="cta-left">
+      <img src="images/calendar_check.png" alt="Calendar icon" class="cta-icon" />
+      <span class="cta-title" style="color: #989797; font-size: 17px; font-family: Suez One; font-weight: 400; letter-spacing: 0.99px; word-wrap: break-word" >List your show</span>
+    </div>
+
+    <!-- Middle: descriptive text -->
+    <div class="cta-middle" style="color: #989797; font-size: 16px; font-family: Suez One; font-weight: 400; letter-spacing: 0.99px; word-wrap: break-word" >
+      Got a show, event, activity or a great experience? Partner with us & get listed on Tixora
+    </div>
+
+    <!-- Right side: pink button -->
+    <button class="cta-button" onclick="window.open('contact.html', '_blank')">
+      Contact today!
+    </button>
+  </section>
+
+  <div class="footer-line">
+    <!-- Centered image over the line with a link -->
+    <a href="index.html">
+      <img class="footer-logo" src="images/footerlogo.png" alt="Footer Logo" />
+    </a>
+  </div>
+  
+  <div class="facebook">
+    <a href="https://www.facebook.com/" target="_blank">
+      <img src="images/facebook.png" alt="Facebook" />
+    </a>
+
+    <a href="https://www.twitter.com/" target="_blank">
+      <img src="images/twitter.png" alt="Twitter" />
+    </a>
+    <a
+      href="https://www.linkedin.com/"
+      target="_blank"
+    > <img src="images/linkedin.png" alt="Linkedin" />
+    </a>
+
+  <div style="color: #989797; font-size: 11px; font-family: Suez One; font-weight: 400; letter-spacing: 0.99px; word-wrap: break-word">
+    Copyright 2025 TIXORA. All rights reserved.
+  </div>
+</footer>
+
+</html>
