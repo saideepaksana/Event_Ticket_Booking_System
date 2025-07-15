@@ -7,7 +7,7 @@
 ## Project Structure
 
 Your current file structure may look like this (based on your screenshots and code):
-
+```text 
 TIXORA/
 ├── css/
 │   └── style.css
@@ -43,7 +43,7 @@ TIXORA/
 ├── user.html
 └── userinfo.js
 
-
+```text
 ---
 
 ## Description
