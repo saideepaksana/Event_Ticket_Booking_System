@@ -78,10 +78,7 @@ TIXORA/
 │ └── route.js
 ├── README.md # this file
 └── package.json # project metadata & dependencies
-```text
-
-
----
+```
 
 ## Getting Started
 
@@ -89,17 +86,17 @@ TIXORA/
    ```bash
    git clone https://github.com/saideepaksana/Event_Ticket_Booking_System.git
    cd Event_Ticket_Booking_System
-    ```bash
+    ```
 
 2. ** Install dependencies **
 ```bash
 npm install
-```bash
+```
 
 3. ** Start the server **
 ```bash
 npm start
-```bash
+```
 
 
 ##Database Setup
@@ -108,12 +105,12 @@ npm start
 2. Import schema
 ```bash
 mysql -u <username> -p <dbname> < database/schema.sql
-```bash
+```
 
 3. Seed sample data (optional)
 ```bash
 mysql -u <username> -p <dbname> < database/fst.sql
-```bash
+```
 
 4. Configure credentials in src/js/db.js (or a .env file if you extend).
 
@@ -135,4 +132,4 @@ This project is licensed under the MIT License.
 Feel free to use, modify, and distribute as you see fit.
 ```bash
 
-```bash
+```
